@@ -81,7 +81,7 @@ On se connecte en root sur le serveur puis on lnce l'installation du serveur SQL
 ```
 apt-get install mysql-server
 ```
-Le serveur est maintenant doté d'un moteur mysql. A noter qu'aucun mot de passe n'a été demandé.
+Le serveur est maintenant doté d'un moteur mysql. A noter qu'aucun mot de passe n'a été demandé. Sur une Debian stretch le moteur SQL est mariadb.
 
 ### Sécurisation du serveur MySQL
 Puisqu'aucun mot de passe n'a été demandé, il faut sécuriser l'accès au serveur en interdisant la connexion distante en root.
@@ -133,10 +133,15 @@ exit
 ```
 
 ## Installation des clients EBP.
+A venir.
+Il faut choisir le mode client-serveur, en indiquant que le poste sera uniquement le client.
 
 ## Accès aux bases MySQL par les professeurs
 Il est techniquement possible de faire toutes les opérations en ligne de comma,de sur le serveur, mais on pourra utiliser divers logiciels comme MySQL WOrkbench pour les opérations de gestion de base.
 
 Il faut télécharger ce logiciel
 .Netframework 4.5.2 nécéssaire (https://www.microsoft.com/net/download/thank-you/net452?survey=false)
+
+## sauvegardes hebdomadaires des bases mysql
+A venir
 
