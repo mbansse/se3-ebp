@@ -6,10 +6,10 @@ utilisation du PGI client-serveur EBP dans un environnement sambaedu
 
 * [Présentation](#présentation)
 * [Mise en place du serveur Linux SQL](#mise-en-place-du-serveur-linux-sql)
-      * [Installation du système d'exploitation](#installation-du-systeme-d-exploitation)
-      * [Installation du moteur SQL](#installation-du-moteur-sql)
-      * [ Sécurisation du serveur MySQL.](#securisation-du-serveur-sql)
-      * [Création d'un utilisateur pouvant lire/écrire dans les bases de données.](#creation-d-un-utilisateur-pouvant-lire-ecrire-dans-les-bases-de-donnees)
+     * [Installation du système d'exploitation](#installation-du-systeme-d-exploitation)
+     * [Installation du moteur SQL](#installation-du-moteur-sql)
+     * [Sécurisation du serveur MySQL](#securisation-du-serveur-mysql)
+     * [Création d'un utilisateur pouvant lire et écrire dans les bases de données](#creation-d-un-utilisateur-pouvant-lire-et-ecrire-dans-les-bases-de-donnees)
 
 
 ## Présentation
@@ -36,14 +36,14 @@ https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.4.0-amd64-net
 On gravera le fichier iso téléchargé sur un cd. Il suffira de booter sur le cd et de se laisser guider.
 
 
-### Installation du moteur SQL.
+### Installation du moteur SQL
 On se connecte en root
 ```
 apt-get install mysql-server
 ```
 Le serveur est maintenant doté d'un moteur mysql. A noter qu'aucun mot de passe n'a été demandé.
 
-### Sécurisation du serveur MySQL.
+### Sécurisation du serveur MySQL
 Puisqu'aucun mot de passe n'a été demandé, il faut sécuriser l'accès au serveur en interdisant la connexion distante en root.
 
 On lance la commande:
@@ -64,7 +64,7 @@ On désactivera ensuite l'accès "root" aux utilisateurs: ainsi, une connection 
 --> mysql3
 On supprime également les bases de tests et autres fichiers inutiles.
 
-### Création d'un utilisateur pouvant lire/écrire dans les bases de données.
+### Création d'un utilisateur pouvant lire et écrire dans les bases de données
 Il faut maintenant créer un nouvel utilisateur de bases mysql, car les enseignants n'auront pas accès au compte root.
 ```
 CREATE USER 'adminmysql'@'localhost' IDENTIFIED BY 'mysql123';
