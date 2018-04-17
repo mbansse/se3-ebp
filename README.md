@@ -143,5 +143,44 @@ Il faut télécharger ce logiciel
 .Netframework 4.5.2 nécéssaire (https://www.microsoft.com/net/download/thank-you/net452?survey=false)
 
 ## sauvegardes hebdomadaires des bases mysql
-A venir
+On va créer un répertoire savmysql à la racine du disque.
+```
+mkdir /savmysql
+```
+Ce répertoire va servir de point de montage d'un disque dur externe, interne, partage samba, nas...
+
+On peut créer un script contenant ces lignes. Ce script appelé savmysql est placé dans /root et doit être executable
+(chmod u+x /root/savmysql)
+```
+#!/bin/bash
+mount -t cifs //172.20.0.11/savmysql /savmysql -o credentials=/root/credentials
+mysqldump --user=root --password=mdprootmysql --all-databases | gzip > /savmysql/sauvegarde-`date +%Y-%m-%d-%H-%M`.sql.gz
+#chmod -R 700 /savmysql/
+cd /root
+umount /savmysql
+exit
+```
+A noter, il faut indique le mdp root "mysql" choisi lors de l'installation et non le mot de passe root du serveur.
+
+L'utilisateur root va sauvegarder l'ensemble des bases compressées dans un fichier comportant la date et l'heure.
+Ainsi, en cas de crash du serveur, il sera possible d'en refabriquer un avec les mmes paramètres et de restaurer les bases existantes.
+
+Ce script peut-être lancé en tache cron de façon hebdomadaire.
+```
+crontab -e
+```
+On ajoute en bas du fichier
+```
+0 4 * * 0 /root/savmysql
+```
+Maintenant, le script est lancé tous les dimanches à 4h00 du matin. Vous disposez donc d'une sauvegarde complète hebdomadaire.
+Il faudra de temps en temps en supprimer quelques unes ou le disque sera saturé (même si la compression est ici très eficace).
+
+Les bases, une fois décompressées pourront être restaurées avec cette commande.
+
+```
+mysql --user=root --password=mdprootmysql < fichier_source.sql
+```
+
+
 
