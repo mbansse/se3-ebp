@@ -6,7 +6,10 @@ utilisation du PGI client-serveur EBP dans un environnement sambaedu
 
 * [Présentation](#présentation)
 * [Mise en place du serveur Linux SQL](#mise-en-place-du-serveur-linux-sql)
-    * [Installation du système d'exploitation](#installation-du-systeme-d-exploitation)
+      * [Installation du système d'exploitation](#installation-du-systeme-d-exploitation)
+      * [Installation du moteur SQL](#installation-du-moteur-sql)
+      * [ Sécurisation du serveur MySQL.](#securisation-du-serveur-sql)
+      * [Création d'un utilisateur pouvant lire/écrire dans les bases de données.](#creation-d-un-utilisateur-pouvant-lire-ecrire-dans-les-bases-de-donnees)
 
 
 ## Présentation
@@ -38,15 +41,21 @@ On se connecte en root
 ```
 apt-get install mysql-server
 ```
-Le serveur est maintenant doté d'un moteur mysql. Il ne reste plus qu'à sécuriser l'accès, et à créer un utilisateur.
+Le serveur est maintenant doté d'un moteur mysql. A noter qu'aucun mot de passe n'a été demandé.
+
+### Sécurisation du serveur MySQL.
+Puisqu'aucun mot de passe n'a été demandé, il faut sécuriser l'accès au serveur en interdisant la connexion distante en root.
 
 On lance la commande:
 
 ```
 mysql_secure_installation
 ```
+
 Initialement, il n'y a pas de mdp root pour mysql, on laissera donc la première demande vierge. On indiquera ensuite Y pour mettre un mot de passe solide Mysql
---> image mysql1
+
+![01](images/mysql1.png)
+
 
 On supprimera ensuite l'utilisateur anonyme en tapant Y pour "remove anonymous users"
 --> mysql3
@@ -55,7 +64,7 @@ On désactivera ensuite l'accès "root" aux utilisateurs: ainsi, une connection 
 --> mysql3
 On supprime également les bases de tests et autres fichiers inutiles.
 
-
+### Création d'un utilisateur pouvant lire/écrire dans les bases de données.
 Il faut maintenant créer un nouvel utilisateur de bases mysql, car les enseignants n'auront pas accès au compte root.
 ```
 CREATE USER 'adminmysql'@'localhost' IDENTIFIED BY 'mysql123';
