@@ -13,12 +13,13 @@ Utilisation du PGI client-serveur EBP dans un environnement sambaedu
 
 
 ## Présentation
-EBP est un logiciel type PGI. Il peut être utilisé de façon collaborative en mode client-serveur.
+EBP est un logiciel type PGI. Il peut être utilisé de façon collaborative en mode client-serveur avec la mise en place d'un serveur dédié.
 
-IL ne sera pas nécéssaire d'utiliser un windows serveur, ou d'activer un nouveau domaine sur le réseau pédagogique.
+IL ne sera pas nécéssaire d'utiliser un windows serveur,d'acheter plusieurs NAS qui ne permettent qu'à 5 utilisateurs simultanés de travailler).
 
-On installera sur un serveur dédié une ditribution Linux Server (Débian ou Ubuntu) avec un moteur mysql. Ce serveur sera placé dans le réseau pédagogique au même titre que le se3.
-Il faudra créer ensuite un compte utilisateur/administrateur de bases mysql. 
+On installera sur un serveur dédié une ditribution  `open-source` Linux Server (Débian ou Ubuntu) avec un moteur mysql. Ce serveur sera placé dans le réseau pédagogique au même titre que le se3 et utilisera donc le domaine existant.
+
+Il faudra créer ensuite un compte utilisateur/administrateur de bases mysql. C'est ce compte qui sera utilisé par les professeurs pour uploader/dupliquer/supprimer les bases que les élèves vont utiliser.
 
 Les clients EBP sous  Windows se connecteront au serveur au moyen de raccourcis. Plusieurs élèves pourront ainsi travailler sur une même base de donnée et gérer chacun leur tâche de façon collaborative.
 
