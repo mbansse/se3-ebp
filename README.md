@@ -1,5 +1,5 @@
 # se3-ebp
-utilisation du PGI client-serveur EBP dans un environnement sambaedu
+Utilisation du PGI client-serveur EBP dans un environnement sambaedu
 
 
 **Article en tout début de rédaction.**
@@ -38,16 +38,16 @@ On gravera le fichier iso téléchargé sur un cd. Il suffira de booter sur le c
 -On choisir la mode d'installation **install** et non graphical install.
 install1.png
 
--Choix de la langue: Français évidemment. Idem pour le pays et la configuration du clavier.
--Nom de machine: choisir un nom netbios avec moins de 15 caractères(et si possible sans caractères spéciaux à l'expetion du   tiret.
+- Choix de la langue: Français évidemment. Idem pour le pays et la configuration du clavier.
+- Nom de machine: choisir un nom netbios avec moins de 15 caractères(et si possible sans caractères spéciaux à l'expetion du   tiret.
 image install2.png
--Domaine: Vous pouvez laisser cet espace **vide** si le serveur ne sera disponible qu'en interne (ce qui sera le cas ici).
--Mot de passe root: Choisir un mot de passe **complexe**. Il faudra l'entrer deux fois (et il n'apparait pas à l'écran).
--Choix d'un utilisateur: Choisir également un mot de passe solide [qui ne soit pas le même] que root.
--Partionnement: choisir d'utiliser le disque entier (convient ici puisqu'on mettra en place plus tard un système de sauvegarde externe des bases). On installera également tout le système dans une mme partition.
--Outil de gestion des paquets Debian: On utilisera pas d'autre analyse de cd.
+- Domaine: Vous pouvez laisser cet espace **vide** si le serveur ne sera disponible qu'en interne (ce qui sera le cas ici).
+- Mot de passe root: Choisir un mot de passe **complexe**. Il faudra l'entrer deux fois (et il n'apparait pas à l'écran).
+- Choix d'un utilisateur: Choisir également un mot de passe solide [qui ne soit pas le même] que root.
+- Partionnement: choisir d'utiliser le disque entier (convient ici puisqu'on mettra en place plus tard un système de sauvegarde externe des bases). On installera également tout le système dans une mme partition.
+- Outil de gestion des paquets Debian: On utilisera pas d'autre analyse de cd.
 image install3.png
--Choix du miroir: Si on est débutant on choisira `France` puis `ftp.fr.debian.org`. Si le se3 sert de miroir local, on pourra choisir `saisie manuelle` (en haut de la liste), puis **nom d'hote**: http://172.20.0.2:9999 (en changeant l'ip par celle du se3). Le répertoire du miroir sera alors `/ftp.fr.debian.org/debian/` .
+- Choix du miroir: Si on est débutant on choisira `France` puis `ftp.fr.debian.org`. Si le se3 sert de miroir local, on pourra choisir `saisie manuelle` (en haut de la liste), puis **nom d'hote**: http://172.20.0.2:9999 (en changeant l'ip par celle du se3). Le répertoire du miroir sera alors `/ftp.fr.debian.org/debian/` .
 - Serveur proxy: Si l'établissement possède un serveur proxy (souvent le AMON), il faut l'indiquer ici.
 image install4.png
 - Participation à des études anonymes: A vous de voir, mais à priori non.
