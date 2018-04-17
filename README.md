@@ -61,12 +61,22 @@ L'installation se finalise. Le serveur va redémarrer. Penser à enlever le supp
 On se connecte en root sur le serveur en entrant le login "root" et le mot de passe choisi au début.
 
 Pour que le serveur garde la même ip, il faudra bien penser à faire une réservation d'adresse (on peut aussi modifier le fichier /etc/network/interfaces pour inscrire en dur l'adresse du serveur). 
+```
+nano /etc/network/interfaces
+```
 
-
+photo install6
+On relance ensuite la connexion réseau par
+```
+service networking restart
+```
+On peut redémarrer le serveur pour plus de sureté.
 
 
 ### Installation du moteur SQL
-On se connecte en root
+Le serveur est maintenant acif, mais le service SQL n'est pas installé.
+
+On se connecte en root sur le serveur puis on lnce l'installation du serveur SQL.
 ```
 apt-get install mysql-server
 ```
