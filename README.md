@@ -1,8 +1,15 @@
 # se3-ebp
 utilisation du PGI client-serveur EBP dans un environnement sambaedu
 
+
 **Article en tout début de rédaction.**
 
+* [Présentation](#présentation)
+* [Mise en place du serveur Linux SQL](#mise-en-place-du-serveur-linux-sql)
+    * [Installation du système d'exploitation](#installation-du-systeme-d-exploitation)
+
+
+## Présentation
 EBP est un logiciel type PGI. Il peut être utilisé de façon collaborative en mode client-serveur.
 
 IL ne sera pas nécéssaire d'utiliser un windows serveur, ou d'activer un nouveau domaine sur le réseau pédagogique.
@@ -14,25 +21,39 @@ Les clients EBP sous  Windows se connecteront au serveur au moyen de raccourcis.
 
 L'upload/suppression de bases EBP pourra se faire avec des outils graphiques sous Windows, rendant la gestion par un professeur non initié à Linux très simple.
 
+## Mise en place du serveur Linux SQL
 
+### Installation du système d'exploitation
+L'installation décrite ici a été faite sur une debian server Stretch. Le plus simple est de télécharger l'iso netinstall disponible ici:
+https://www.debian.org/CD/netinst/
+
+Sauf serveur très vieux ou particulier, on choisira la version amd64:
+https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.4.0-amd64-netinst.iso
+
+On gravera le fichier iso téléchargé sur un cd. Il suffira de booter sur le cd et de se laisser guider.
+
+
+### Installation du moteur SQL.
+On se connecte en root
 ```
 apt-get install mysql-server
 ```
 Le serveur est maintenant doté d'un moteur mysql. Il ne reste plus qu'à sécuriser l'accès, et à créer un utilisateur.
 
+On lance la commande:
 
 ```
 mysql_secure_installation
 ```
-Initialement, il n'y a pas de mdp root pour mysql, on laissera donc la première demande vierge.
-On indiquera ensuite Y pour mettre un mot de passe solide Mysql
+Initialement, il n'y a pas de mdp root pour mysql, on laissera donc la première demande vierge. On indiquera ensuite Y pour mettre un mot de passe solide Mysql
 --> image mysql1
 
 On supprimera ensuite l'utilisateur anonyme en tapant Y pour "remove anonymous users"
 --> mysql3
-On désactivera ensuite l'accès "root" aux utilisateurs: ainsi, une connection "root" sera possible uniquement sur le serveur.
+On désactivera ensuite l'accès "root" aux utilisateurs: ainsi, une connection "root" sera possible uniquement sur le serveur, mais impossible avec des outils de gestion MySQL comme phpmyadmin ou MySQL Workbench (sur Windows).
+
 --> mysql3
-On supprime également les bases de tests.
+On supprime également les bases de tests et autres fichiers inutiles.
 
 
 Il faut maintenant créer un nouvel utilisateur de bases mysql, car les enseignants n'auront pas accès au compte root.
@@ -49,6 +70,11 @@ Il faut maintenant appliquer les différents changements effectués.
 FLUSH PRIVILEGES;
 ```
 
-On pourra évidemment créer plusieurs utilisateurs.
+On pourra évidemment créer plusieurs utilisateurs. Une fois les opérations terminées on peut quitter la console Mysql.
 
+```
+exit
+```
+
+## Installation des clients EBP.
 
