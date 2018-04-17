@@ -106,6 +106,13 @@ On supprime également les bases de tests et autres fichiers inutiles.
 
 ### Création d'un utilisateur pouvant lire et écrire dans les bases de données
 Il faut maintenant créer un nouvel utilisateur de bases mysql, car les enseignants n'auront pas accès au compte root.
+
+On accède à la console mysql en tapant
+```
+mysql -u root -p
+```
+Ensuite on va indiquer qu'un nouvel utilisateur de base mysql doit être créé.
+
 ```
 CREATE USER 'adminmysql'@'localhost' IDENTIFIED BY 'mysql123';
 ```
@@ -126,4 +133,10 @@ exit
 ```
 
 ## Installation des clients EBP.
+
+## Accès aux bases MySQL par les professeurs
+Il est techniquement possible de faire toutes les opérations en ligne de comma,de sur le serveur, mais on pourra utiliser divers logiciels comme MySQL WOrkbench pour les opérations de gestion de base.
+
+Il faut télécharger ce logiciel
+.Netframework 4.5.2 nécéssaire (https://www.microsoft.com/net/download/thank-you/net452?survey=false)
 
