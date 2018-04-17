@@ -9,7 +9,7 @@ Utilisation du PGI client-serveur EBP dans un environnement sambaedu
      * [Installation du système d'exploitation](#installation-du-systeme-d-exploitation)
      * [Installation du moteur SQL](#installation-du-moteur-sql)
      * [Sécurisation du serveur MySQL](#securisation-du-serveur-mysql)
-     * [Création d'un utilisateur pouvant lire et écrire dans les bases de données](#creation-d-un-utilisateur-pouvant-lire-et-ecrire-dans-les-bases-de-donnees)
+     * [Création d'un utilisateur pouvant lire et écrire dans les bases de données](#creation-dun-utilisateur-pouvant-lire-et-ecrire-dans-les-bases-de-donnees)
 
 
 ## Présentation
