@@ -37,23 +37,23 @@ https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.4.0-amd64-net
 On gravera le fichier iso téléchargé sur un cd. Il suffira de booter sur le cd et de se laisser guider. Une installation par clef usb est également possible. L'iso doit être placée sur la clef à l'aide d'un logiciel comme **unetbootin** .
 
 -On choisir la mode d'installation **install** et non graphical install.
-install1.png
+![01](images/install1.png)
 
 - Choix de la langue: Français évidemment. Idem pour le pays et la configuration du clavier.
 - Nom de machine: choisir un nom netbios avec moins de 15 caractères(et si possible sans caractères spéciaux à l'expetion du   tiret.
-image install2.png
+![02](images/install2.png)
 - Domaine: Vous pouvez laisser cet espace **vide** si le serveur ne sera disponible qu'en interne (ce qui sera le cas ici).
 - Mot de passe root: Choisir un mot de passe **complexe**. Il faudra l'entrer deux fois (et il n'apparait pas à l'écran).
 - Choix d'un utilisateur: Choisir également un mot de passe solide [qui ne soit pas le même] que root.
 - Partionnement: choisir d'utiliser le disque entier (convient ici puisqu'on mettra en place plus tard un système de sauvegarde externe des bases). On installera également tout le système dans une mme partition.
 - Outil de gestion des paquets Debian: On utilisera pas d'autre analyse de cd.
-image install3.png
+![03](images/install3.png)
 - Choix du miroir: Si on est débutant on choisira `France` puis `ftp.fr.debian.org`. Si le se3 sert de miroir local, on pourra choisir `saisie manuelle` (en haut de la liste), puis **nom d'hote**: http://172.20.0.2:9999 (en changeant l'ip par celle du se3). Le répertoire du miroir sera alors `/ftp.fr.debian.org/debian/` .
 - Serveur proxy: Si l'établissement possède un serveur proxy (souvent le AMON), il faut l'indiquer ici.
-image install4.png
+![04](images/install4.png)
 - Participation à des études anonymes: A vous de voir, mais à priori non.
 - Choix des paquets à installer :  on ne cochera que les utilitaires usuels du système, ainsi que le serveur ssh. Tout autre choix est à décocher (surtout le choix d'une interface graphique qui ne sera d'aucune utilité pour un serveur sql).
-image install5.png
+![05](images/install5.png)
 - Installer le grub:sur le secteur d'amorçage: OUI (ou le serveur ne pourra pas démarrer de façon autonome).
 - Périphérique où sera installé grub: choisir le premier disque (/dev/sda)
 
@@ -66,7 +66,7 @@ Pour que le serveur garde la même ip, il faudra bien penser à faire une réser
 nano /etc/network/interfaces
 ```
 
-photo install6
+![06](images/install6.png)
 On relance ensuite la connexion réseau par
 ```
 service networking restart
@@ -94,14 +94,14 @@ mysql_secure_installation
 
 Initialement, il n'y a pas de mdp root pour mysql, on laissera donc la première demande vierge. On indiquera ensuite Y pour mettre un mot de passe solide Mysql
 
-![01](images/mysql1.png)
+![07](images/mysql1.png)
 
 
 On supprimera ensuite l'utilisateur anonyme en tapant Y pour "remove anonymous users"
---> mysql3
+![08](images/mysql2.png)
 On désactivera ensuite l'accès "root" aux utilisateurs: ainsi, une connection "root" sera possible uniquement sur le serveur, mais impossible avec des outils de gestion MySQL comme phpmyadmin ou MySQL Workbench (sur Windows).
 
---> mysql3
+![09](images/mysql3.png)
 On supprime également les bases de tests et autres fichiers inutiles.
 
 ### Création d'un utilisateur pouvant lire et écrire dans les bases de données
