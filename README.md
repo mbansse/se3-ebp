@@ -139,8 +139,16 @@ Il faut choisir le mode client-serveur, en indiquant que le poste sera uniquemen
 ## Accès aux bases MySQL par les professeurs
 Il est techniquement possible de faire toutes les opérations en ligne de comma,de sur le serveur, mais on pourra utiliser divers logiciels comme MySQL WOrkbench pour les opérations de gestion de base.
 
-Il faut télécharger ce logiciel
+Il faut télécharger ce logiciel ici
+https://dev.mysql.com/downloads/workbench/
+
+A noter que la présence de .Netframework est nécéssaire pour utiliser MySQL Workbench, ainsi que Microsoft Visual C++ 2015
+
 .Netframework 4.5.2 nécéssaire (https://www.microsoft.com/net/download/thank-you/net452?survey=false)
+
+L'installeur MySQL permet d'ajouter tout un tas de modules, ici seul le module Workbench nous intéresse. 
+Dans la partie `choosing a Setup Type`, on prendra `Custom` puis on choisira seulement mySQL Workbench.
+
 
 ## sauvegardes hebdomadaires des bases mysql
 On va créer un répertoire savmysql à la racine du disque.
