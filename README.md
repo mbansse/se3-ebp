@@ -141,17 +141,28 @@ Séléctionner ensuite le mode **client** seulement.
 image client2.png
 
 
-activation du logiciel
+### activation du logiciel
+
+* Méthode à l'ancienne
+
 Il est plus que probable que l'établissement n'utilise pas la dernière version des clients EBP. Lors de la première execution, il faudra activer le module manuellement.
+
 Choisir **activer le logiciel**
+
 Puis activer manuellement
 image client4.png
+
 Entrer les renseignements de licence tels qu'ils figurent sur le courrier d'EBP. Puis cliquer sur **activer le logiciel**.
 
 Normalement un message doit indiquer que le logiciel est bien activé.
 image client6.png
 
 On precède de la même façon pour chacun des composants EBP.
+* Sauvegarde/restauration du fichier licence.xml
+Une fois tous les logiciels activés, on pourra sauvegarder le fichiere licence.xml placé dans 'C:\ProgramData\EBP'. 
+
+Si on doit réinstaller les logiciels sur un autre type de poste, on procedra à l'installation, puis on copiera le fichier dans le répertoire du nouveau poste. 
+Si la licence est valide, l'activation se fera sans avoir à tout entrer une nouvelle fois.
 
 ## Accès aux bases MySQL par les professeurs
 Il est techniquement possible de faire toutes les opérations en ligne de comma,de sur le serveur, mais on pourra utiliser divers logiciels comme MySQL WOrkbench pour les opérations de gestion de base.
