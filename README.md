@@ -187,23 +187,25 @@ Si la licence est valide, l'activation se fera sans avoir à tout entrer une nou
 Dans l'exemple suivant, on a placé sur le disque dur le fichier.zip contenant la base "Jupiter Média" .
 On lance l'un des modules (Par exemple le module "Paye"). On ira ensuite sur "OUTILS>RESTAURATION" .
 On indique l'emplacement du fichier
-uploadbase1.png
+![15](images/uploadbase1.png)
+
 On valide. On choisi "inclure le dossier". Puis suivant.
 On choisi les modules à incorporer dans la base.
-uploadbase2.png
+
+[16](images/uploadbase2.png)
+
 On va ensuite choisir le type de serveur SQL, en l'occurence un serveur Linux "**SUN MYSQL**".
-uploadbase3.png
+[17](images/uploadbase3.png)
 
 Il faut entrer les données de l'utilisateur créé précédemment pour utiliser/gérer les bases.
 
-uploadbase4.png
+[18](images/uploadbase4.png)
 
-Il faut indiquer à quel endroit sera copiée localement la base. (*A voir avec les collègues!)
+Il faut indiquer à quel endroit sera copiée localement la base. (**A voir avec les collègues!)
 
 On valide. La base se restaure sur le serveur.
 
-uploadbase5.png
-
+[19](images/uploadbase5.png)
 
 
 
