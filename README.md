@@ -28,11 +28,13 @@ L'upload/suppression de bases EBP pourra se faire avec des outils graphiques sou
 ## Mise en place du serveur Linux SQL
 
 ### Installation du système d'exploitation
-L'installation décrite ici a été faite sur une debian server Stretch. Le plus simple est de télécharger l'iso netinstall disponible ici:
+L'installation décrite ici a été faite sur une debian server Jessie. Le plus simple est de télécharger l'iso netinstall disponible ici:
 https://www.debian.org/CD/netinst/
 
 Sauf serveur très vieux ou particulier, on choisira la version amd64:
-https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.4.0-amd64-netinst.iso
+https://cdimage.debian.org/mirror/cdimage/archive/8.10.0/amd64/iso-cd/debian-8.10.0-amd64-netinst.iso
+
+REMARQUE: La version 9 de Debian (stretch) a pour moteur mysql Mariadb. Il faut tester la compatibilité des bases  avec cette version. (A venir)
 
 On gravera le fichier iso téléchargé sur un cd. Il suffira de booter sur le cd et de se laisser guider. Une installation par clef usb est également possible. L'iso doit être placée sur la clef à l'aide d'un logiciel comme **unetbootin** .
 
@@ -81,10 +83,10 @@ On se connecte en root sur le serveur puis on lnce l'installation du serveur SQL
 ```
 apt-get install mysql-server
 ```
-Le serveur est maintenant doté d'un moteur mysql. A noter qu'aucun mot de passe n'a été demandé. Sur une Debian stretch le moteur SQL est mariadb.
+Le serveur est maintenant doté d'un moteur mysql. Le mdp "root mysql"  est demandé (on évitera de mettre le même mot de passe que le "root" du système.
 
 ### Sécurisation du serveur MySQL
-Puisqu'aucun mot de passe n'a été demandé, il faut sécuriser l'accès au serveur en interdisant la connexion distante en root.
+Il faut sécuriser l'accès au serveur en interdisant la connexion distante en root.
 
 On lance la commande:
 
@@ -92,14 +94,14 @@ On lance la commande:
 mysql_secure_installation
 ```
 
-Initialement, il n'y a pas de mdp root pour mysql, on laissera donc la première demande vierge. On indiquera ensuite Y pour mettre un mot de passe solide Mysql
+On indique de nouveau le mdp donné avant.
 
 ![07](images/mysql1.png)
 
 
 On supprimera ensuite l'utilisateur anonyme en tapant Y pour "remove anonymous users"
 ![08](images/mysql2.png)
-On désactivera ensuite l'accès "root" aux utilisateurs: ainsi, une connection "root" sera possible uniquement sur le serveur, mais impossible avec des outils de gestion MySQL comme phpmyadmin ou MySQL Workbench (sur Windows).
+On désactivera ensuite l'accès "root" aux utilisateurs: ainsi, une connection "root" sera possible uniquement sur le serveur, mais impossible avec des outils de gestion MySQL comme phpmyadmin ou MySQL Workbench (sur Windows). Par la suite, on créera un utilisateur ayant des droits d'accès sur les bases.
 
 ![09](images/mysql3.png)
 On supprime également les bases de tests et autres fichiers inutiles.
@@ -114,12 +116,12 @@ mysql -u root -p
 Ensuite on va indiquer qu'un nouvel utilisateur de base mysql doit être créé.
 
 ```
-CREATE USER 'adminmysql'@'localhost' IDENTIFIED BY 'mysql123';
+CREATE USER 'adminmysql'@'%' IDENTIFIED BY 'mysql123';
 ```
-L'utilisateur est maintenant créé, il ne reste plus qu'à lui donner des droits de lecteure/écriture sur les bases.
+L'utilisateur est maintenant créé, il ne reste plus qu'à lui donner des droits de lecteure/écriture sur les bases. le "%" indique que cet utilisateur pourra se connecter depuis n'importe quelle ip de l'établissement, ce qui est nécéssaire pour que les postes clients puissent lire/écrire sur le serveur.
 
 ```
-GRANT ALL PRIVILEGES ON * . * TO 'adminmysql'@'localhost';
+GRANT ALL PRIVILEGES ON * . * TO 'adminmysql'@'%';
 ```
 Il faut maintenant appliquer les différents changements effectués.
 ```
@@ -131,6 +133,16 @@ On pourra évidemment créer plusieurs utilisateurs. Une fois les opérations te
 ```
 exit
 ```
+
+Par défaut, les connexions mysql sont uniquement possibles depuis le serveur (localhost).
+On va donc modifier le fichier de configuration
+```
+nano /etc/mysql/my.cnf
+```
+On ira jusqu'à la ligne **bind-address = 127.0.0.1** et on la remplacera l'ip 127.0.0.1 par **0.0.0.0** 
+
+On relance le service mysql. On peut tenter un accès depuis un ordinateur quelconque avec mysql-workbench.
+
 
 ## Installation des clients EBP.
 A venir.
