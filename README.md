@@ -177,7 +177,11 @@ Si on doit réinstaller les logiciels sur un autre type de poste, on procedra à
 Si la licence est valide, l'activation se fera sans avoir à tout entrer une nouvelle fois.
 
 ## Accès aux bases MySQL par les professeurs
-Il est techniquement possible de faire toutes les opérations en ligne de comma,de sur le serveur, mais on pourra utiliser divers logiciels comme MySQL WOrkbench pour les opérations de gestion de base.
+
+### Utilisation de Workbench pour Windows
+Il est techniquement possible de faire toutes les opérations en ligne de commande sur le serveur, mais on pourra utiliser divers logiciels comme MySQL WOrkbench pour les opérations de gestion de base.
+
+**A noter que Workbench n'est pas compatible avec les moteurs mysql basés sur Mariadb.**
 
 Il faut télécharger ce logiciel ici
 https://dev.mysql.com/downloads/workbench/
@@ -189,6 +193,13 @@ A noter que la présence de .Netframework est nécéssaire pour utiliser MySQL W
 L'installeur MySQL permet d'ajouter tout un tas de modules, ici seul le module Workbench nous intéresse. 
 Dans la partie `choosing a Setup Type`, on prendra `Custom` puis on choisira seulement mySQL Workbench.
 
+On lance le logiciel. On fera "+" puis on entre les paramètres de connexion de la base
+![10](images/workbench1.png)
+
+On ferme la fenetre, puis on lance la connexion. Le mot de passe va être demandé. On pourra stocker le mdp sur le poste, mais il est plus prudent de laisser le reglage avec mdp à entrer.
+
+On pourra cliquer sur "server status" pour voir l'état du serveur.
+![11](images/workbench2.png)
 
 ## sauvegardes hebdomadaires des bases mysql
 On va créer un répertoire savmysql à la racine du disque.
