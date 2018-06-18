@@ -63,7 +63,7 @@ L'installation se finalise. Le serveur va redémarrer. Penser à enlever le supp
 
 On se connecte en root sur le serveur en entrant le login "root" et le mot de passe choisi au début.
 
-Pour que le serveur garde la même ip, il faudra bien penser à faire une réservation d'adresse (on peut aussi modifier le fichier /etc/network/interfaces pour inscrire en dur l'adresse du serveur). 
+Pour que le serveur garde la même ip, il faudra bien penser à faire une réservation d'adresse (on peut aussi modifier le fichier /etc/network/interfaces pour inscrire en dur l'adresse du serveur). Ici la carte réseau s'appelle enp0se mais sur Jessie elle prendra le nom d'eth0 .
 ```
 nano /etc/network/interfaces
 ```
