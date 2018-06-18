@@ -184,6 +184,28 @@ Si on doit réinstaller les logiciels sur un autre type de poste, on procedra à
 Si la licence est valide, l'activation se fera sans avoir à tout entrer une nouvelle fois.
 
 ## Upload d'une base mysql avec le client sur le serveur.
+Dans l'exemple suivant, on a placé sur le disque dur le fichier.zip contenant la base "Jupiter Média" .
+On lance l'un des modules (Par exemple le module "Paye"). On ira ensuite sur "OUTILS>RESTAURATION" .
+On indique l'emplacement du fichier
+uploadbase1.png
+On valide. On choisi "inclure le dossier". Puis suivant.
+On choisi les modules à incorporer dans la base.
+uploadbase2.png
+On va ensuite choisir le type de serveur SQL, en l'occurence un serveur Linux "**SUN MYSQL**".
+uploadbase3.png
+
+Il faut entrer les données de l'utilisateur créé précédemment pour utiliser/gérer les bases.
+
+uploadbase4.png
+
+Il faut indiquer à quel endroit sera copiée localement la base. (*A voir avec les collègues!)
+
+On valide. La base se restaure sur le serveur.
+
+uploadbase5.png
+
+
+
 
 
 ## Accès aux bases MySQL par les professeurs
