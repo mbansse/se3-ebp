@@ -10,8 +10,11 @@ Utilisation du PGI client-serveur EBP dans un environnement sambaedu
      * [Installation du moteur SQL](#installation-du-moteur-sql)
      * [Sécurisation du serveur MySQL](#securisation-du-serveur-mysql)
      * [Création d'un utilisateur pouvant lire et écrire dans les bases de données](#creation-dun-utilisateur-pouvant-lire-et-ecrire-dans-les-bases-de-donnees)
-
-
+* [Upload d'une base mysql avec le client sur le serveur](#upload-dune-base-mysql-avec-le-client-sur-le-serveur)
+* [Accès aux bases MySQL par les professeurs](#acces-aux-bases-mysql-par-les-professeurs)
+         * [Utilisation de Workbench pour Windows](#utilisation-de-workbench-pour-windows)
+         * [Utilisation de phpmyadmin](#utilisation-de-phpmyadmin)
+    
 ## Présentation
 EBP est un logiciel type PGI. Il peut être utilisé de façon collaborative en mode client-serveur avec la mise en place d'un serveur dédié.
 
@@ -141,7 +144,11 @@ nano /etc/mysql/my.cnf
 ```
 On ira jusqu'à la ligne **bind-address = 127.0.0.1** et on la remplacera l'ip 127.0.0.1 par **0.0.0.0** 
 
-On relance le service mysql. On peut tenter un accès depuis un ordinateur quelconque avec mysql-workbench.
+On relance le service mysql.
+```
+service mysql restart
+```
+On peut tenter un accès depuis un ordinateur quelconque avec mysql-workbench ou phpmyadmin.
 
 
 ## Installation des clients EBP.
@@ -175,6 +182,9 @@ Une fois tous les logiciels activés, on pourra sauvegarder le fichiere licence.
 
 Si on doit réinstaller les logiciels sur un autre type de poste, on procedra à l'installation, puis on copiera le fichier dans le répertoire du nouveau poste. 
 Si la licence est valide, l'activation se fera sans avoir à tout entrer une nouvelle fois.
+
+## Upload d'une base mysql avec le client sur le serveur.
+
 
 ## Accès aux bases MySQL par les professeurs
 
