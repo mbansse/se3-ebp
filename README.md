@@ -192,20 +192,20 @@ On indique l'emplacement du fichier
 On valide. On choisi "inclure le dossier". Puis suivant.
 On choisi les modules à incorporer dans la base.
 
-[16](images/uploadbase2.png)
+![16](images/uploadbase2.png)
 
 On va ensuite choisir le type de serveur SQL, en l'occurence un serveur Linux "**SUN MYSQL**".
-[17](images/uploadbase3.png)
+![17](images/uploadbase3.png)
 
 Il faut entrer les données de l'utilisateur créé précédemment pour utiliser/gérer les bases.
 
-[18](images/uploadbase4.png)
+![18](images/uploadbase4.png)
 
 Il faut indiquer à quel endroit sera copiée localement la base. (**A voir avec les collègues!)
 
 On valide. La base se restaure sur le serveur.
 
-[19](images/uploadbase5.png)
+![19](images/uploadbase5.png)
 
 
 
