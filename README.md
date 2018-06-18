@@ -201,6 +201,33 @@ On ferme la fenetre, puis on lance la connexion. Le mot de passe va être demand
 On pourra cliquer sur "server status" pour voir l'état du serveur.
 ![11](images/workbench2.png)
 
+### Utilisation de phpmyadmin
+Phpmyadmin est un outil permettant de gérer les bases mysql avec une interface web. Phpmyadmin est donc lancé avec un simple navigateur.
+
+Sur le serveur on lancera
+```
+apt-get install phpmyadmin
+```
+phpmyadmin nécéssite la présence d'un serveur web. Il sera demandé quel serveur web choisir. On prendra **apache2**.
+
+A la question :" Faut-il configurer la base de données de phpmyadmin avec dbconfig-common ?" On répondra OUI.
+On entrera le mdp "root MYSQL" , puis on choisira un mdp pour l'interface d'aministration (mais on se connectera avec le compte créé pour lire/écrire les bases).
+
+On se connecte sur l'interface en tapant sur un navigateur
+http://ipduserveur/phpmyadmin/  (ex: http://172.20.0.5/phpmyadmin/ ).
+
+![12](images/phpmyadmin1.png)
+On arrive sur la page d'accueil du serveur
+![13](images/phpmyadmin2.png)
+
+Sur la capture d'écran, on peut voir à gauche la présence d'une base restaurée sur le serveur avec le client EBP.
+Pour supprimer cette base, il suffira de cliquer dessus, puis d'aller dans "Opérations" puis "Supprimer la base de données".
+![14](images/phpmyadmin3.png)
+
+
+
+
+
 ## sauvegardes hebdomadaires des bases mysql
 On va créer un répertoire savmysql à la racine du disque.
 ```
