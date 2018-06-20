@@ -212,7 +212,8 @@ Si tout va bien, vous devriez avoir un message indiquant que la base s'est resta
 
 ![20](images/uploadbase6.png)
 
-REMARQUE: Les raccorucis EBP (fichier.ebp) contiennent diverses infos comme l'ip du serveur, le login, le nom de la base. [Le MDP est lui crypté pour des raisons de sécurité.]
+REMARQUES:
+ Les raccourcis EBP (fichier.ebp) contiennent diverses infos comme l'ip du serveur, le login, le nom de la base. [Le MDP est lui crypté pour des raisons de sécurité.]
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -229,6 +230,11 @@ REMARQUE: Les raccorucis EBP (fichier.ebp) contiennent diverses infos comme l'ip
   <IsDemoDatabase>false</IsDemoDatabase>
 </Shortcut>
 ```
+
+
+On peut aussi restaurer plusieurs fois la même base de donnée: on fera cependant attention à ne pas donner le même nom au dossier créé. Ce sera d'ailleurs bien plus pratique dans la gestion des raccourcis.
+![21](images/uploadbase7.png)
+
 
 
 ## Accès aux bases MySQL par les professeurs
