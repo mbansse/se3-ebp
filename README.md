@@ -201,9 +201,8 @@ Il faut entrer les données de l'utilisateur créé précédemment pour utiliser
 
 ![18](images/uploadbase4.png)
 
-Il faut indiquer à quel endroit sera copiée localement la base. Dans les faits, seul un raccourci vers la base va être créé puisque les données sont sur le serveur. On peut donc choisir n'importe quel endroit (disque réseau comme lecteur H:(Classes) ou une clef USB, puis faire une copie plus tard vers les lecteurs réseau.)
+Il faut indiquer à quel endroit sera copiée localement "la base". Dans les faits, **seul un raccourci vers la base va être créé** puisque les données sont sur le serveur. On peut donc choisir n'importe quel endroit (disque réseau comme lecteur H:(Classes) ou une clef USB, puis faire une copie plus tard vers les lecteurs réseau.)
 
-SI vous éditez le fichier ".ebp" avec un éditeur de texte comme notepad++, vous verrez que ce fichier contient l'ip du serveur, le login du compte (adminmysql ici), le mot de passe est crypté. Il n'y a donc pas de risque à ce qu'un élève accède au serveur grace à ce fichier).
 
 On valide. La base se restaure sur le serveur.
 
@@ -212,6 +211,24 @@ On valide. La base se restaure sur le serveur.
 Si tout va bien, vous devriez avoir un message indiquant que la base s'est restaurée correctement.
 
 ![20](images/uploadbase6.png)
+
+REMARQUE: Les raccorucis EBP (fichier.ebp) contiennent diverses infos comme l'ip du serveur, le login, le nom de la base. [Le MDP est lui crypté pour des raisons de sécurité.]
+
+```
+<?xml version="1.0" encoding="utf-8"?>
+<Shortcut xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DatabaseShortcuts>
+    <DatabaseShortcut>
+      <SchemaId>9c9c51d5-d6fd-44fc-9724-a63a935a6fc7</SchemaId>
+      <DatabaseId>5725272d-4e8c-44bc-bf15-873384650ea0</DatabaseId>
+      <ApplicationId>8938492b-f049-4957-bb8e-71fe66db6845</ApplicationId>
+      <ApplicationVersion>8.0</ApplicationVersion>
+      <ConnectionString>providerid=478AD2A9-D144-4ef9-9626-42EFF41D5005;server=172.20.0.5;database=EQUIPSTAR 2017 _ EBP V8_9c9c51d5-d6fd-44fc-9724-a63a935a6fc7;port=3306;user id=adminmysql;encryptedpwd=F874B1E841E87050;</ConnectionString>
+    </DatabaseShortcut>
+  </DatabaseShortcuts>
+  <IsDemoDatabase>false</IsDemoDatabase>
+</Shortcut>
+```
 
 
 ## Accès aux bases MySQL par les professeurs
