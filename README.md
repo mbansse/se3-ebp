@@ -201,13 +201,15 @@ Il faut entrer les données de l'utilisateur créé précédemment pour utiliser
 
 ![18](images/uploadbase4.png)
 
-Il faut indiquer à quel endroit sera copiée localement la base. (**A voir avec les collègues!)
+Il faut indiquer à quel endroit sera copiée localement la base. (est-ce juste un raccourci? y a-t-il des données???? **A voir avec les collègues!)
 
 On valide. La base se restaure sur le serveur.
 
 ![19](images/uploadbase5.png)
 
+Si tout va bien, vous devriez avoir un message indiquant que la base s'est restaurée correctement.
 
+![20](images/uploadbase6.png)
 
 
 ## Accès aux bases MySQL par les professeurs
