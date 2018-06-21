@@ -11,8 +11,10 @@ Utilisation du PGI client-serveur EBP dans un environnement sambaedu
      * [Installation du moteur SQL](#installation-du-moteur-sql)
      * [Sécurisation du serveur MySQL](#securisation-du-serveur-mysql)
      * [Création d'un utilisateur pouvant lire et écrire dans les bases de données](#creation-dun-utilisateur-pouvant-lire-et-ecrire-dans-les-bases-de-donnees)
+* [Installation des clients EBP](#installation-des-clients-ebp)
+* [activation du logiciel](#activation-du-logiciel)
 * [Upload d'une base mysql avec le client sur le serveur](#upload-dune-base-mysql-avec-le-client-sur-le-serveur)
-* [Création et gestion des raccourcis ](#creation-et-gestion-des-raccourcis) 
+* [Création et gestion des raccourcis](#creation-et-gestion-des-raccourcis) 
      * [Création de raccourcis](#creation-des-raccourcis)
      * [Utilisation-gestion des utilisateurs-raccourcis par les élèves-professeurs](#utilisation-gestion-des-utilisateurs-raccourcis-par-les-eleves-professeurs)
 * [Accès aux bases MySQL par les professeurs](#acces-aux-bases-mysql-par-les-professeurs)
@@ -164,7 +166,7 @@ service mysql restart
 On peut tenter un accès depuis un ordinateur quelconque avec mysql-workbench ou phpmyadmin.
 
 
-## Installation des clients EBP.
+## Installation des clients EBP
 A venir.
 
 Choisir le mode **Installation réseau**
@@ -173,7 +175,7 @@ Séléctionner ensuite le mode **client** seulement.
 image client2.png
 
 
-### activation du logiciel
+## activation du logiciel
 
 * Méthode à l'ancienne
 
