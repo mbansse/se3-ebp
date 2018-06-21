@@ -1,8 +1,7 @@
 # se3-ebp
 Utilisation du PGI client-serveur EBP dans un environnement sambaedu
 
-
-**Article en tout début de rédaction.**
+*Article en cours de rédaction, donc non terminé.
 
 * [Présentation](#présentation)
 * [Mise en place du serveur Linux SQL](#mise-en-place-du-serveur-linux-sql)
