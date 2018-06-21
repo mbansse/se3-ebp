@@ -252,11 +252,13 @@ Pour cela, on fera Fichier puis Créer un raccourci. On indique à nouveau les c
 Le raccourci a été de 
 ![22](images/uploadbase8.png)
 
-### Utilisation des raccourcis par les élèves/professeurs
+### Utilisation/gestion des utilisateurs/raccourcis par les élèves/professeurs
 Les utilisateurs de SambaEdu diposent de diférents lecteurs réseau (lecteur Classe, lecteur personnel,etc.)
 Pour qu'un élève puisse se connecter de nimprte quel poste de l'établissement, on placera le raccourci vers la base dans le lecteur Classe. Si on a créé une base pour 4 élèves, il sera judicieux de placer le racourci dans 'Classes>login' (donc faire 4 copiers coller). Ainsi, seuls les 4 élèves pourront se connecter à la base de données.
 
-On pourrait aussi placer ce fichier dans le répertoire 'Classe>_Travail' mais dans ce cas, il sera accessibl à tous les élèves de la classe, ce qui n'est pas grave si on a créé des utilisateurs personnalisés avec login/mdp dans la base. 
+On pourrait aussi placer ce fichier dans le répertoire 'Classe>_Travail' mais dans ce cas, il sera accessible à tous les élèves de la classe, ce qui n'est pas grave si on a créé des utilisateurs personnalisés avec login/mdp dans la base. 
+Pour cela, il suffira d'aller dans la partie `Paramêtres>Utilisateurs` de la base ouverte avec un code admin. On pourra aussi supprimer les accès existants, modifier les mdp,etc.
+![23](images/uploadbase10.png)
 
 ## Accès aux bases MySQL par les professeurs
 
