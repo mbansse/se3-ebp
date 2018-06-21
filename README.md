@@ -6,11 +6,15 @@ Utilisation du PGI client-serveur EBP dans un environnement sambaedu
 
 * [Présentation](#présentation)
 * [Mise en place du serveur Linux SQL](#mise-en-place-du-serveur-linux-sql)
+     * [Quelques recommandations pour le serveur](#quelques-recommandations-pour-le-serveur)
      * [Installation du système d'exploitation](#installation-du-systeme-d-exploitation)
      * [Installation du moteur SQL](#installation-du-moteur-sql)
      * [Sécurisation du serveur MySQL](#securisation-du-serveur-mysql)
      * [Création d'un utilisateur pouvant lire et écrire dans les bases de données](#creation-dun-utilisateur-pouvant-lire-et-ecrire-dans-les-bases-de-donnees)
 * [Upload d'une base mysql avec le client sur le serveur](#upload-dune-base-mysql-avec-le-client-sur-le-serveur)
+* [Création et gestion des raccourcis ](#creation-et-gestion-des-raccourcis) 
+     * [Création de raccourcis](#creation-des-raccourcis)
+     * [Utilisation-gestion des utilisateurs-raccourcis par les élèves-professeurs](#utilisation-gestion-des-utilisateurs-raccourcis-par-les-eleves-professeurs)
 * [Accès aux bases MySQL par les professeurs](#acces-aux-bases-mysql-par-les-professeurs)
      * [Utilisation de Workbench pour Windows](#utilisation-de-workbench-pour-windows)
      * [Utilisation de phpmyadmin](#utilisation-de-phpmyadmin)
@@ -32,7 +36,7 @@ L'upload/suppression de bases EBP pourra se faire avec des outils graphiques sou
 
 ## Mise en place du serveur Linux SQL
 
-### Quelques recommadations pour le serveur.
+### Quelques recommandations pour le serveur
 Les bases MySQL prennent beaucoup de place physique sur le serveur. Il faut donc prévoir un serveur muni d'un espace de stockage important. De même, les disques sont beaucoup solicités.
 On pourra prévoir de mettre des disques identiques en raid 10 (mode miroir) ou des disques ssd pro. 
 On pourra aussi virtualiser le serveur avec Proxmox, ce qui permettra de faire facilement des sauvegardes/restaurations du serveur.
@@ -244,15 +248,15 @@ REMARQUES:
 On peut aussi restaurer plusieurs fois la même base de donnée: on fera cependant attention à ne pas donner le même nom au dossier créé. Ce sera d'ailleurs bien plus pratique dans la gestion des raccourcis.
 ![21](images/uploadbase7.png)
 
-## Création/gestion des raccourcis 
+## Création et gestion des raccourcis 
 
-###Création de raccourcis
+### Création de raccourcis
 Si pour une raison ou une autre, il fallait recréer un raccourci vers une base existente, c'est possible avec le client.
 Pour cela, on fera Fichier puis Créer un raccourci. On indique à nouveau les coordonnées du serveur, ainsi que les identifiants. Il faut alors choisir la base parmi la liste de celles présentes sur le serveur.
 Le raccourci a été de 
 ![22](images/uploadbase8.png)
 
-### Utilisation/gestion des utilisateurs/raccourcis par les élèves/professeurs
+### Utilisation-gestion des utilisateurs-raccourcis par les élèves-professeurs
 Les utilisateurs de SambaEdu diposent de diférents lecteurs réseau (lecteur Classe, lecteur personnel,etc.)
 Pour qu'un élève puisse se connecter de nimprte quel poste de l'établissement, on placera le raccourci vers la base dans le lecteur `Classes`. Si on a créé une base pour 4 élèves, il sera judicieux de placer le racourci dans `Classes>login` (donc faire 4 copiers coller). Ainsi, seuls les 4 élèves pourront se connecter à la base de données.
 
@@ -329,7 +333,9 @@ mkdir /savmysql
 Ce répertoire va servir de point de montage d'un disque dur externe, interne, partage samba, nas...
 
 On peut créer un script contenant ces lignes. Ce script appelé savmysql est placé dans /root et doit être executable
-(chmod u+x /root/savmysql)
+(chmod u+x /root/savmysql).
+Dans l'exemple décrit en dessous, un partage réseau est monté dans le répertoire savmysql. Le login/mdp du partage est placé dans un fichier credential.
+On peut évidemment remplacer le partage samba par un disque due externe USB, un partage NFS,etc.
 ```
 #!/bin/bash
 mount -t cifs //172.20.0.11/savmysql /savmysql -o credentials=/root/credentials
@@ -342,13 +348,13 @@ exit
 A noter, il faut indiquer le mdp root "mysql" choisi lors de l'installation et non le mot de passe root du serveur.
 
 L'utilisateur root va sauvegarder l'ensemble des bases compressées dans un fichier comportant la date et l'heure.
-Ainsi, en cas de crash du serveur, il sera possible d'en refabriquer un avec les mmes paramètres et de restaurer les bases existantes.
+Ainsi, en cas de crash du serveur, il sera possible d'en refabriquer un avec les mêmes paramètres et de restaurer les bases existantes.
 
 Ce script peut-être lancé en tache cron de façon hebdomadaire.
 ```
 crontab -e
 ```
-On ajoute en bas du fichier
+On ajoute en bas du fichier:
 ```
 0 4 * * 0 /root/savmysql
 ```
