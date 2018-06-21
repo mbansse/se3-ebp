@@ -21,19 +21,19 @@ Utilisation du PGI client-serveur EBP dans un environnement sambaedu
      * [Utilisation de phpmyadmin](#utilisation-de-phpmyadmin)
     
 ## Présentation
-EBP est un logiciel type PGI. Il peut être utilisé de façon collaborative en mode client-serveur avec la mise en place d'un serveur dédié. Un élève pourra donc travailler sur n'importe quel poste de l'établissement doté du client EBP.
+EBP est un logiciel type PGI. Il peut être utilisé de façon `collaborative` en `mode client-serveur` avec la mise en place d'un serveur dédié. Un élève pourra donc travailler sur n'importe quel poste de l'établissement doté du client EBP.
 
-L'utilisation en établissement scolaire sous SambaEdu est parfaitement fonctionnelle et pratique grace à ses lecteurs réseaux partagés sur lesquels seront placés les raccourcis vers les bases.
+L'utilisation en établissement scolaire sous `SambaEdu` est parfaitement fonctionnelle et **pratique** grâce à ses lecteurs réseaux partagés sur lesquels seront placés les raccourcis vers les bases.
 
-IL ne sera pas nécéssaire d'utiliser un windows serveur,d'acheter plusieurs NAS qui ne permettent qu'à 5 utilisateurs simultanés de travailler).
+**IL ne sera pas nécéssaire d'utiliser un windows serveur pour un autre domaine,d'acheter plusieurs NAS qui ne permettent qu'à un petit nombre d'utilisateurs simultanés de travailler).
 
-On installera sur un serveur dédié une ditribution  `open-source` Linux Server (Débian ou Ubuntu) avec un moteur mysql. Ce serveur sera placé dans le réseau pédagogique au même titre que le se3 et utilisera donc le domaine existant.
+On installera sur un serveur dédié une ditribution  `open-source` Linux Server (Débian ou Ubuntu) avec un moteur mysql. Ce serveur sera placé dans le réseau pédagogique au même titre que le se3 et utilisera donc le **domaine existant.**
 
-Il faudra créer ensuite un compte utilisateur/administrateur de bases mysql. C'est ce compte qui sera utilisé par les professeurs pour uploader/dupliquer/supprimer les bases que les élèves vont utiliser.
+Il faudra créer ensuite au moins un compte utilisateur/administrateur de bases mysql. C'est ce compte qui sera utilisé par les professeurs pour uploader/dupliquer/supprimer les bases que les élèves vont utiliser.
 
 Les clients EBP sous  Windows se connecteront au serveur au moyen de raccourcis. Plusieurs élèves pourront ainsi travailler sur une même base de donnée et gérer chacun leur tâche de façon collaborative.
 
-L'upload/suppression de bases EBP pourra se faire avec des outils graphiques sous Windows, rendant la gestion par un professeur non initié à Linux très simple.
+L'upload de bases EBP se fera avec le client EBP. La suppression elle, pourra se faire avec des outils graphiques sous Windows/linux, rendant la gestion par un professeur non initié à Linux **très simple**.
 
 ## Mise en place du serveur Linux SQL
 
