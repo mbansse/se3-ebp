@@ -16,7 +16,9 @@ Utilisation du PGI client-serveur EBP dans un environnement sambaedu
      * [Utilisation de phpmyadmin](#utilisation-de-phpmyadmin)
     
 ## Présentation
-EBP est un logiciel type PGI. Il peut être utilisé de façon collaborative en mode client-serveur avec la mise en place d'un serveur dédié.
+EBP est un logiciel type PGI. Il peut être utilisé de façon collaborative en mode client-serveur avec la mise en place d'un serveur dédié. Un élève pourra donc travailler sur n'importe quel poste de l'établissement doté du client EBP.
+
+L'utilisation en établissement scolaire sous SambaEdu est parfaitement fonctionnelle et pratique grace à ses lecteurs réseaux partagés sur lesquels seront placés les raccourcis vers les bases.
 
 IL ne sera pas nécéssaire d'utiliser un windows serveur,d'acheter plusieurs NAS qui ne permettent qu'à 5 utilisateurs simultanés de travailler).
 
@@ -30,8 +32,15 @@ L'upload/suppression de bases EBP pourra se faire avec des outils graphiques sou
 
 ## Mise en place du serveur Linux SQL
 
+### Quelques recommadations pour le serveur.
+Les bases MySQL prennent beaucoup de place physique sur le serveur. Il faut donc prévoir un serveur muni d'un espace de stockage important. De même, les disques sont beaucoup solicités.
+On pourra prévoir de mettre des disques identiques en raid 10 (mode miroir) ou des disques ssd pro. 
+On pourra aussi virtualiser le serveur avec Proxmox, ce qui permettra de faire facilement des sauvegardes/restaurations du serveur.
+
+Plus d'infos ici: https://github.com/SambaEdu/se3-docs/blob/master/se3-virtualisation/proxmox.md
+
 ### Installation du système d'exploitation
-L'installation décrite ici a été faite sur une debian server Jessie. Le plus simple est de télécharger l'iso netinstall disponible ici:
+L'installation décrite ici a été faite sur une debian server Jessie (version 8). Le plus simple est de télécharger l'iso netinstall disponible ici:
 https://www.debian.org/CD/netinst/
 
 Sauf serveur très vieux ou particulier, on choisira la version amd64:
@@ -235,7 +244,19 @@ REMARQUES:
 On peut aussi restaurer plusieurs fois la même base de donnée: on fera cependant attention à ne pas donner le même nom au dossier créé. Ce sera d'ailleurs bien plus pratique dans la gestion des raccourcis.
 ![21](images/uploadbase7.png)
 
+## Création/gestion des raccourcis 
 
+###Création de raccourcis
+Si pour une raison ou une autre, il fallait recréer un raccourci vers une base existente, c'est possible avec le client.
+Pour cela, on fera Fichier puis Créer un raccourci. On indique à nouveau les coordonnées du serveur, ainsi que les identifiants. Il faut alors choisir la base parmi la liste de celles présentes sur le serveur.
+Le raccourci a été de 
+![22](images/uploadbase8.png)
+
+### Utilisation des raccourcis par les élèves/professeurs
+Les utilisateurs de SambaEdu diposent de diférents lecteurs réseau (lecteur Classe, lecteur personnel,etc.)
+Pour qu'un élève puisse se connecter de nimprte quel poste de l'établissement, on placera le raccourci vers la base dans le lecteur Classe. Si on a créé une base pour 4 élèves, il sera judicieux de placer le racourci dans 'Classes>login' (donc faire 4 copiers coller). Ainsi, seuls les 4 élèves pourront se connecter à la base de données.
+
+On pourrait aussi placer ce fichier dans le répertoire 'Classe>_Travail' mais dans ce cas, il sera accessibl à tous les élèves de la classe, ce qui n'est pas grave si on a créé des utilisateurs personnalisés avec login/mdp dans la base. 
 
 ## Accès aux bases MySQL par les professeurs
 
@@ -263,6 +284,8 @@ On pourra cliquer sur "server status" pour voir l'état du serveur.
 ![11](images/workbench2.png)
 
 Pour supprimer une base, il suffit de cliquer sur le nom de  la base (en bas à droite) puis de faire un clic droit, puis "DROP SCHEMA". On valide
+
+
 ### Utilisation de phpmyadmin
 Phpmyadmin est un outil permettant de gérer les bases mysql avec une interface web. Phpmyadmin est donc lancé avec un simple navigateur.
 
