@@ -169,10 +169,11 @@ On peut tenter un accès depuis un ordinateur quelconque avec mysql-workbench ou
 ## Installation des clients EBP
 A venir.
 
-Choisir le mode **Installation réseau**
-image client1.png
+Choisir le mode **Installation réseau**.
+![24](images/client1.png)
+
 Séléctionner ensuite le mode **client** seulement. 
-image client2.png
+![25](images/client2.png)
 
 
 ## activation du logiciel
@@ -183,15 +184,13 @@ Il est plus que probable que l'établissement n'utilise pas la dernière version
 
 Choisir **activer le logiciel**
 
-Puis activer manuellement
-image client4.png
-
-Entrer les renseignements de licence tels qu'ils figurent sur le courrier d'EBP. Puis cliquer sur **activer le logiciel**.
+Puis activer manuellement. Entrer les renseignements de licence tels qu'ils figurent sur le courrier d'EBP. Puis cliquer sur **activer le logiciel**.
 
 Normalement un message doit indiquer que le logiciel est bien activé.
-image client6.png
+
 
 On precède de la même façon pour chacun des composants EBP.
+
 * Sauvegarde/restauration du fichier licence.xml
 Une fois tous les logiciels activés, on pourra sauvegarder le fichiere licence.xml placé dans 'C:\ProgramData\EBP'. 
 
