@@ -254,9 +254,9 @@ Le raccourci a été de
 
 ### Utilisation/gestion des utilisateurs/raccourcis par les élèves/professeurs
 Les utilisateurs de SambaEdu diposent de diférents lecteurs réseau (lecteur Classe, lecteur personnel,etc.)
-Pour qu'un élève puisse se connecter de nimprte quel poste de l'établissement, on placera le raccourci vers la base dans le lecteur Classe. Si on a créé une base pour 4 élèves, il sera judicieux de placer le racourci dans 'Classes>login' (donc faire 4 copiers coller). Ainsi, seuls les 4 élèves pourront se connecter à la base de données.
+Pour qu'un élève puisse se connecter de nimprte quel poste de l'établissement, on placera le raccourci vers la base dans le lecteur `Classes`. Si on a créé une base pour 4 élèves, il sera judicieux de placer le racourci dans `Classes>login` (donc faire 4 copiers coller). Ainsi, seuls les 4 élèves pourront se connecter à la base de données.
 
-On pourrait aussi placer ce fichier dans le répertoire 'Classe>_Travail' mais dans ce cas, il sera accessible à tous les élèves de la classe, ce qui n'est pas grave si on a créé des utilisateurs personnalisés avec login/mdp dans la base. 
+On pourrait aussi placer ce fichier dans le répertoire `Classe>_Travail` mais dans ce cas, il sera accessible à tous les élèves de la classe, ce qui n'est pas grave si on a créé des utilisateurs personnalisés avec login/mdp dans la base. 
 Pour cela, il suffira d'aller dans la partie `Paramêtres>Utilisateurs` de la base ouverte avec un code admin. On pourra aussi supprimer les accès existants, modifier les mdp,etc.
 ![23](images/uploadbase10.png)
 
@@ -289,13 +289,13 @@ Pour supprimer une base, il suffit de cliquer sur le nom de  la base (en bas à 
 
 
 ### Utilisation de phpmyadmin
-Phpmyadmin est un outil permettant de gérer les bases mysql avec une interface web. Phpmyadmin est donc lancé avec un simple navigateur.
+`Phpmyadmin` est un outil permettant de gérer les bases mysql avec une interface web. Phpmyadmin est donc lancé avec un simple navigateur.
 
 Sur le serveur on lancera:
 ```
 apt-get install phpmyadmin
 ```
-phpmyadmin nécéssite la présence d'un serveur web. Il sera demandé quel serveur web choisir. On prendra **apache2**.
+`phpmyadmin` nécéssite la présence d'un serveur web. Il sera demandé quel serveur web choisir. On prendra **apache2**.
 
 A la question :" Faut-il configurer la base de données de phpmyadmin avec dbconfig-common ?" On répondra OUI.
 
@@ -339,7 +339,7 @@ cd /root
 umount /savmysql
 exit
 ```
-A noter, il faut indique le mdp root "mysql" choisi lors de l'installation et non le mot de passe root du serveur.
+A noter, il faut indiquer le mdp root "mysql" choisi lors de l'installation et non le mot de passe root du serveur.
 
 L'utilisateur root va sauvegarder l'ensemble des bases compressées dans un fichier comportant la date et l'heure.
 Ainsi, en cas de crash du serveur, il sera possible d'en refabriquer un avec les mmes paramètres et de restaurer les bases existantes.
