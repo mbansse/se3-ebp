@@ -1,5 +1,5 @@
-# se3-ebp
-Utilisation du PGI client-serveur EBP dans un environnement sambaedu
+# se3 et EBP
+Utilisation du PGI client-serveur EBP dans un environnement sambaedu 3 ou 4
 
 *Article en cours de rédaction, donc non terminé.
 
@@ -25,9 +25,12 @@ EBP est un logiciel type PGI. Il peut être utilisé de façon `collaborative` e
 
 L'utilisation en établissement scolaire sous `SambaEdu` est parfaitement fonctionnelle et **pratique** grâce à ses lecteurs réseaux partagés sur lesquels seront placés les raccourcis vers les bases.
 
-**IL ne sera pas nécéssaire d'utiliser un windows serveur pour un autre domaine,d'acheter plusieurs NAS qui ne permettent qu'à un petit nombre d'utilisateurs simultanés de travailler).
+**Ce tutoriel est à destination des professeurs ressources/administrateurs des réseaux pédagogiques pour la mise en place du mode client/serveur
 
-On installera sur un serveur dédié une ditribution  `open-source` Linux Server (Débian ou Ubuntu) avec un moteur mysql. Ce serveur sera placé dans le réseau pédagogique au même titre que le se3 et utilisera donc le **domaine existant.**
+
+IL ne sera **pas nécéssaire** d'utiliser un windows serveur pour un autre domaine,d'acheter plusieurs NAS qui ne permettent qu'à un petit nombre d'utilisateurs simultanés de travailler).
+
+[**Principe**]: On installera sur `un serveur dédié` une ditribution  `open-source` Linux Server (Débian ou Ubuntu) avec un moteur mysql. Ce serveur sera placé dans le réseau pédagogique au même titre que le se3 et utilisera donc le **domaine existant.**
 
 Il faudra créer ensuite au moins un compte utilisateur/administrateur de bases mysql. C'est ce compte qui sera utilisé par les professeurs pour uploader/dupliquer/supprimer les bases que les élèves vont utiliser.
 
