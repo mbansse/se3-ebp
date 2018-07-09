@@ -248,7 +248,7 @@ REMARQUES:
       <DatabaseId>5725272d-4e8c-44bc-bf15-873384650ea0</DatabaseId>
       <ApplicationId>8938492b-f049-4957-bb8e-71fe66db6845</ApplicationId>
       <ApplicationVersion>8.0</ApplicationVersion>
-      <ConnectionString>providerid=478AD2A9-D144-4ef9-9626-42EFF41D5005;server=172.20.0.5;database=EQUIPSTAR 2017 _ EBP V8_9c9c51d5-d6fd-44fc-9724-a63a935a6fc7;port=3306;user id=adminmysql;encryptedpwd=F874B1E841E87050;</ConnectionString>
+      <ConnectionString>providerid=478AD2A9-D144-4ef9-9626-42EFF41D5005;server=172.20.0.5;database=EQUIPSTAR 2017 _ EBP V8_9c9c51d5-d6fd-44fc-9724-a63a935a6fc7;port=3306;user id=adminmysql;encryptedpwd=F87xxxxxxxxx;</ConnectionString>
     </DatabaseShortcut>
   </DatabaseShortcuts>
   <IsDemoDatabase>false</IsDemoDatabase>
