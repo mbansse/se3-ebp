@@ -347,7 +347,10 @@ mkdir /savmysql
 Ce répertoire va servir de point de montage d'un disque dur externe, interne, partage samba, nas...
 
 On peut créer un script contenant ces lignes. Ce script appelé savmysql est placé dans /root et doit être executable
-(chmod u+x /root/savmysql.sh).
+```cd /root
+touch savmysql.sh
+chmod u+x /root/savmysql.sh
+```
 
 Dans l'exemple décrit en dessous, un partage réseau est monté dans le répertoire savmysql. Le login/mdp du partage est placé dans un fichier credential.
 
@@ -365,19 +368,22 @@ On pourra également utiliser un partage NFS. Un grand nombre de tutoriels expli
 
 
 **Contenu du script de sauvegarde**
+on édite le fichier
+```
+nano /root/savmysql.sh
+```
+On copie dans le fichier les lignes suivantes:
 ```
 #!/bin/bash
-mysqldump --user=root --password=mdprootmysql --all-databases | gzip > /savmysql/sauvegarde-`date +%Y-%m-%d-%H-%M`.sql.gz
+mysqldump --user=adminmysql --password=mysql123 --all-databases | gzip > /savmysql/sauvegarde-`date +%Y-%m-%d-%H-%M`.sql.gz
 exit
 ```
-
-A noter, il faut indiquer le mdp root "mysql" choisi lors de l'installation et non le mot de passe root du serveur.
 Le mot de passe étant en clair dans le fichier, il faut impérativement restreindre l'acès à ce fichier.
 ```
 chmod 700 /root/savmysql.sh
 ```
 L'utilisateur root va sauvegarder l'ensemble des bases compressées dans un fichier comportant la date et l'heure.
-Ainsi, en cas de crash du serveur, il sera possible d'en refabriquer un avec les mêmes paramètres et de restaurer les bases existantes.
+Ainsi, en cas de crash du serveur, il sera possible d'en refabriquer un avec les mêmes paramètres et de restaurer la dernière sauvegarde existante.
 
 Ce script peut-être lancé en tache cron de façon hebdomadaire.
 ```
@@ -393,8 +399,8 @@ Il faudra de temps en temps en supprimer quelques unes ou le disque sera saturé
 Les bases, une fois décompressées (unzip nomdufichier.zip) pourront être restaurées avec cette commande.
 
 ```
-mysql --user=root --password=mdprootmysql < fichier_source.sql
+mysql --user=adminmysql --password=mysql123 < fichier_source.sql
 ```
-
+L'opération sera très longue, mais efficace. Vu la taille des sauvegardes, il faut mieux faire cette restauration en ligne de commande (CLI) plutôt qu'avec des outils graphiques. (risques d'erreurs/plantages plus importants).
 
 
