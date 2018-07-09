@@ -375,7 +375,7 @@ A noter, il faut indiquer le mdp root "mysql" choisi lors de l'installation et n
 Le mot de passe étant en clair dans le fichier, il faut impérativement restreindre l'acès à ce fichier.
 ```
 chmod 700 /root/savmysql.sh
-
+```
 L'utilisateur root va sauvegarder l'ensemble des bases compressées dans un fichier comportant la date et l'heure.
 Ainsi, en cas de crash du serveur, il sera possible d'en refabriquer un avec les mêmes paramètres et de restaurer les bases existantes.
 
