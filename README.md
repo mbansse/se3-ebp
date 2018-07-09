@@ -19,7 +19,7 @@ Utilisation du PGI client-serveur EBP dans un environnement sambaedu 3/4
 * [Accès aux bases MySQL par les professeurs](#accès-aux-bases-mysql-par-les-professeurs)
      * [Utilisation de Workbench pour Windows](#utilisation-de-workbench-pour-windows)
      * [Utilisation de phpmyadmin](#utilisation-de-phpmyadmin)
-    
+* [sauvegardes hebdomadaires des bases mysql](#sauvegardes-hebdomadaires-des-bases-mysql)
 ## Présentation
 EBP est un logiciel type PGI. Il peut être utilisé de façon `collaborative` en `mode client-serveur` avec la mise en place d'un serveur dédié. Un élève pourra donc travailler sur n'importe quel poste de l'établissement doté du client EBP.
 
