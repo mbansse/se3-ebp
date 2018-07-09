@@ -254,10 +254,11 @@ On peut aussi restaurer plusieurs fois la même base de donnée: on fera cependa
 Si pour une raison ou une autre, il fallait recréer un raccourci vers une base existente, c'est possible avec le client.
 Pour cela, on fera Fichier puis Créer un raccourci. On indique à nouveau les coordonnées du serveur, ainsi que les identifiants. Il faut alors choisir la base parmi la liste de celles présentes sur le serveur.
 Le raccourci a été de 
-![22](images/uploadbase8.png)
+![24](images/uploadbase8.png)
 
 ### Utilisation-gestion des utilisateurs-raccourcis par les élèves-professeurs
 Les utilisateurs de SambaEdu diposent de diférents lecteurs réseau (lecteur Classe, lecteur personnel,etc.)
+![22](images/lecteurse3.png)
 Pour qu'un élève puisse se connecter de nimprte quel poste de l'établissement, on placera le raccourci vers la base dans le lecteur `Classes`. Si on a créé une base pour 4 élèves, il sera judicieux de placer le racourci dans `Classes>login` (donc faire 4 copiers coller). Ainsi, seuls les 4 élèves pourront se connecter à la base de données.
 
 On pourrait aussi placer ce fichier dans le répertoire `Classe>_Travail` mais dans ce cas, il sera accessible à tous les élèves de la classe, ce qui n'est pas grave si on a créé des utilisateurs personnalisés avec login/mdp dans la base. 
