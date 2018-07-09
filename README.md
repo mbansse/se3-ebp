@@ -1,6 +1,8 @@
 # SE3 et EBP
 Utilisation du PGI client-serveur EBP dans un environnement sambaedu 3/4
 
+**Ce tutoriel est à destination des professeurs ressources/administrateurs des réseaux pédagogiques pour la mise en place du serveur permettant l'utilisation en mode client/serveur.**
+
 *Article en cours de rédaction, donc non terminé.
 
 * [Présentation](#présentation)
@@ -24,8 +26,6 @@ Utilisation du PGI client-serveur EBP dans un environnement sambaedu 3/4
 EBP est un logiciel type PGI. Il peut être utilisé de façon `collaborative` en `mode client-serveur` avec la mise en place d'un serveur dédié. Un élève pourra donc travailler sur n'importe quel poste de l'établissement doté du client EBP.
 
 L'utilisation en établissement scolaire sous `SambaEdu` est parfaitement fonctionnelle et **pratique** grâce à ses lecteurs réseaux partagés sur lesquels seront placés les raccourcis vers les bases.
-
-**Ce tutoriel est à destination des professeurs ressources/administrateurs des réseaux pédagogiques pour la mise en place du serveur permettant l'utilisation en mode client/serveur.**
 
 Il s'appuie sur le travail de Cristophe cessac (Christophe.cessac@ac-orleans-tours.fr), avec l'aide  de mes collègues Madjid Hamoumraoui (Madjid.Hamoumraoui@ac-versailles.fr),Bersoullé Edith (Edith-Clau.Lemasson@ac-versailles.fr) professeurs au lycée Jacques Prévert de Longjumeau.
 
