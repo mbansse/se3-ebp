@@ -27,7 +27,7 @@ EBP est un logiciel type PGI. Il peut être utilisé de façon `collaborative` e
 
 L'utilisation en établissement scolaire sous `SambaEdu` est parfaitement fonctionnelle et **pratique** grâce à ses lecteurs réseaux partagés sur lesquels seront placés les raccourcis vers les bases.
 
-Il s'appuie sur le travail de Cristophe cessac (Christophe.cessac@ac-orleans-tours.fr), avec l'aide  de mes collègues Madjid Hamoumraoui (Madjid.Hamoumraoui@ac-versailles.fr),Bersoullé Edith (Edith-Clau.Lemasson@ac-versailles.fr) professeurs au lycée Jacques Prévert de Longjumeau.
+Ce document s'appuie sur le travail de Cristophe cessac (Christophe.cessac@ac-orleans-tours.fr), avec l'aide  de mes collègues Madjid Hamoumraoui (Madjid.Hamoumraoui@ac-versailles.fr),Bersoullé Edith (Edith-Clau.Lemasson@ac-versailles.fr) professeurs au lycée Jacques Prévert de Longjumeau.
 
 IL ne sera **pas nécéssaire** d'utiliser un `Windows serveur` voir de créer `un autre domaine`,d'acheter plusieurs NAS qui ne permettent qu'à un petit nombre d'utilisateurs simultanés de travailler).
 
