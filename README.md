@@ -42,14 +42,14 @@ L'upload de bases EBP se fera avec le client EBP. La suppression elle, pourra se
 ## Mise en place du serveur Linux SQL
 
 ### Quelques recommandations pour le serveur
-Les bases MySQL prennent beaucoup de place physique sur le serveur. Il faut donc prévoir un serveur muni d'un espace de stockage important. De même, les disques sont beaucoup solicités.
+Les bases MySQL prennent beaucoup de place physique sur le serveur. Il faut donc prévoir un serveur muni d'un espace de stockage important. De même, les disques sont beaucoup solicités, on évitera les disques durs pour NAS. Des disques durs pour serveurs sont à favoriser.
 On pourra prévoir de mettre des disques identiques en raid 10 (mode miroir) ou des disques ssd pro. 
 Dans notre lycée, le serveur possède 12 Go de RAM, ainsi que 4 disques serveurs de 1To chacun, ainsi qu'un SSD PRO servant de cache.
-On pourra aussi virtualiser le serveur avec Proxmox 5, ce qui permettra de faire facilement des sauvegardes/restaurations du serveur.
+On pourra aussi virtualiser le serveur avec Proxmox 5, ce qui permettra de faire facilement des sauvegardes/restaurations du serveur. L'utilisation de Proxmox est vraiment très simple.
 
 Plus d'infos ici: https://github.com/SambaEdu/se3-docs/blob/master/se3-virtualisation/proxmox.md
 
-De même l'achat d'un disque du externe, ou l'utilisation d'un partage réseau permettra de sauvegarder les bases mysql en cas de panne du serveur ou de réinstallation (voir plus bas)
+De même l'achat d'un disque du externe de capacité importante, ou l'utilisation d'un partage réseau permettra de sauvegarder les bases mysql en cas de panne du serveur ou de réinstallation (voir plus bas)
 
 
 ### Installation du système d'exploitation
